@@ -66,7 +66,7 @@ export const playListData: Track[] = [
     artwork:
       'https://www.pagalworld.online/GpE34Kg9Gq/113457/143498-garmi-street-dancer-3d-mp3-song-300.jpg',
     url: require('./assests/garmi.mp3'),
-  },  
+  },
 
   {
     id: 8,
@@ -76,7 +76,7 @@ export const playListData: Track[] = [
     artwork:
       'https://c.saavncdn.com/977/Laal-Peeli-Akhiyaan-From-Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240111141044-500x500.jpg',
     url: require('./assests/laal.mp3'),
-  },  
+  },
   {
     id: 9,
     title: 'Lutt Putt Gaya',
@@ -85,7 +85,7 @@ export const playListData: Track[] = [
     artwork:
       'https://images.herzindagi.info/image/2023/Nov/lutt-putt-gaya-dunki-song.jpg',
     url: require('./assests/lutt.mp3'),
-  }, 
+  },
   {
     id: 10,
     title: 'Mann Bharryaa 2',
@@ -94,5 +94,63 @@ export const playListData: Track[] = [
     artwork:
       'https://c.saavncdn.com/242/Mann-Bharryaa-2-0-From-Shershaah--Hindi-2021-20210814143023-500x500.jpg',
     url: require('./assests/maanShershah.mp3'),
-  }, 
+  },
 ];
+
+export const songs = [
+  {
+    hindi: [
+      {
+        id: 1,
+        title: 'Lutt Putt Gaya',
+        artist: 'Mohammad Rafi, AI',
+        album: 'Lutt Putt Gaya',
+        artwork:
+          'https://images.herzindagi.info/image/2023/Nov/lutt-putt-gaya-dunki-song.jpg',
+        url: require('./assests/lutt.mp3'),
+      },
+      {
+        id: 2,
+        title: 'Teri Baaton Mein Aisa Uljha Jiya',
+        artist: 'Tanishk Bagchi, Romy, Tanishk Bagchi, Neeraj Rajawat',
+        album: 'Laal Peeli Akhiyaan',
+        artwork:
+          'https://c.saavncdn.com/977/Laal-Peeli-Akhiyaan-From-Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240111141044-500x500.jpg',
+        url: require('./assests/laal.mp3'),
+      },
+      {
+        id: 3,
+        title: 'Teri Baaton Mein Aisa Uljha Jiya',
+        artist: 'Tanishk Bagchi, Romy, Tanishk Bagchi, Neeraj Rajawat',
+        album: 'Laal Peeli Akhiyaan',
+        artwork:
+          'https://c.saavncdn.com/977/Laal-Peeli-Akhiyaan-From-Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240111141044-500x500.jpg',
+        url: require('./assests/laal.mp3'),
+      },
+    ],
+  },
+  {
+    punjabi: [
+      {
+        id: 1,
+        title: 'Brown White Black Rang',
+        artist: 'Avy Sra, Karan Aujla',
+        album: 'Brown White Black Rang',
+        artwork:
+          'https://c.saavncdn.com/177/White-Brown-Black-Punjabi-2022-20221207053210-500x500.jpg',
+        url: require('./utils/white.mp3'),
+      },
+      {
+        id: 2,
+        title: 'Garmi-Street Dancer ',
+        artist: 'Neha Kakkar & Badshah',
+        album: 'Garmi',
+        artwork:
+          'https://www.pagalworld.online/GpE34Kg9Gq/113457/143498-garmi-street-dancer-3d-mp3-song-300.jpg',
+        url: require('./assests/garmi.mp3'),
+      },
+    ],
+  },
+];
+
+export const language = ['hindi', 'punjabi'];

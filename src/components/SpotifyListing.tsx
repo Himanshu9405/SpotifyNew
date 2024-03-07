@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {playListData} from './constants';
+import React, {useEffect} from 'react';
+import {language, playListData} from './constants';
 import {useNavigation} from '@react-navigation/native';
 import TrackPlayer, {RepeatMode} from 'react-native-track-player';
 
@@ -26,9 +26,7 @@ const SpotifyListing = () => {
       await TrackPlayer.setupPlayer();
       await TrackPlayer.add(playListData);
       await TrackPlayer.setRepeatMode(RepeatMode.Queue);
-      // await TrackPlayer.play();
     } catch (err) {
-      // console.error(err);
       console.error('start', err);
     }
   }
@@ -37,8 +35,33 @@ const SpotifyListing = () => {
     getState();
   }, []);
 
+  const handleArtistPress = (item: string) => {
+    navigation.navigate('artist', item);
+  };
+
   return (
     <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Artist</Text>
+        <View style={styles.artistContainer}>
+          <FlatList
+            horizontal
+            scrollEnabled={false}
+            data={language}
+            renderItem={({item}: any) => {
+              return (
+                <TouchableOpacity
+                  style={styles.artistCard}
+                  onPress={() => handleArtistPress(item)}
+                  >
+                  <Text style={styles.textContainer1}>{item}</Text>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+      </View>
+      
       <View style={styles.textContainer}>
         <Text style={styles.text}>Playlist</Text>
       </View>
@@ -90,7 +113,7 @@ export default SpotifyListing;
 
 const styles = StyleSheet.create({
   card1: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: 100,
@@ -150,27 +173,24 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingHorizontal: 8,
   },
-  container1: {
-    flex: 1,
+  artistContainer: {
+    height: 120,
+    backgroundColor: 'red',
+    padding: 10,
     flexDirection: 'row',
-    padding: 8,
   },
-  card1: {
-    flex: 1,
+  artistCard: {
+    height: 100,
+    width: 120,
+    backgroundColor: 'black',
+    marginHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 100,
-    height: 100,
-    margin: 4,
-    borderRadius: 4,
   },
-  cardOne: {
-    backgroundColor: '#ff0000',
-  },
-  cardTwo: {
-    backgroundColor: '#008000',
-  },
-  cardThree: {
-    backgroundColor: '#0000FF',
+  textContainer1: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: '500',
+    textTransform: 'uppercase',
   },
 });
