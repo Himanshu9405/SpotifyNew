@@ -21,7 +21,7 @@ const Auth = () => {
       {splashScreen ? (
         <SplashScreen />
       ) : (
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator screenOptions={{headerShown: false}} >
           <Stack.Screen name="listing" component={SpotifyListing} />
           <Stack.Screen name="details" component={Spotify} />
           <Stack.Screen name="artist" component={Artist} />
